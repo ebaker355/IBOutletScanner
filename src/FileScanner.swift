@@ -20,28 +20,29 @@
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
- */
+*/
 
 import Foundation
 
-public struct IBOutletScanner {
+enum FileScannerError: Error {
+    case fileSystemError
+}
 
-    let options = Options.createFromCommandLineArguments()
-    let fileScanner = FileScanner()
+public struct FileScanner {
+    typealias FileScannerProcessor = (_ filePath: String) -> Void
 
-    public static func run() -> Int32 {
-        let scanner = IBOutletScanner()
+    func processFiles(ofTypes fileTypes: [String], inPath path: String, _ processor: FileScannerProcessor) throws {
+        guard let enumerator = FileManager.default.enumerator(atPath: path) else {
+            throw FileScannerError.fileSystemError
+        }
 
-        do {
-            try scanner.fileScanner.processFiles(ofTypes: ["storyboard", "xib"],
-                                                 inPath: scanner.options.rootPath) { file in
-                print("Processing file: " + String(describing: file))
+        let rootURL = URL(fileURLWithPath: path)
+
+        while let dir = enumerator.nextObject() as? String {
+            let fileURL = rootURL.appendingPathComponent(dir)
+            if fileTypes.contains(fileURL.pathExtension) {
+                processor(fileURL.pathComponents.last!)
             }
         }
-        catch {
-            print("error: " + String(describing: error))
-        }
-
-        return 0
     }
 }

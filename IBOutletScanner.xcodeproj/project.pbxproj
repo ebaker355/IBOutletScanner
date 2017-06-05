@@ -10,6 +10,8 @@
 		07AB0C5C1EE4D4FE00D8DDCD /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB0C5B1EE4D4FE00D8DDCD /* SWXMLHash.swift */; };
 		07AB0C5E1EE4D50F00D8DDCD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB0C5D1EE4D50F00D8DDCD /* main.swift */; };
 		07AB0C601EE4D55400D8DDCD /* IBOutletScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB0C5F1EE4D55400D8DDCD /* IBOutletScanner.swift */; };
+		07C52FAA1EE4DA9800A812B0 /* FileScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C52FA91EE4DA9800A812B0 /* FileScanner.swift */; };
+		07C52FAE1EE61DBB00A812B0 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C52FAD1EE61DBB00A812B0 /* Options.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +32,8 @@
 		07AB0C5B1EE4D4FE00D8DDCD /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = SWXMLHash/Source/SWXMLHash.swift; sourceTree = "<group>"; };
 		07AB0C5D1EE4D50F00D8DDCD /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		07AB0C5F1EE4D55400D8DDCD /* IBOutletScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBOutletScanner.swift; sourceTree = "<group>"; };
+		07C52FA91EE4DA9800A812B0 /* FileScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileScanner.swift; sourceTree = "<group>"; };
+		07C52FAD1EE61DBB00A812B0 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +68,10 @@
 		07AB0C591EE4D4A600D8DDCD /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				07AB0C5D1EE4D50F00D8DDCD /* main.swift */,
+				07C52FA91EE4DA9800A812B0 /* FileScanner.swift */,
 				07AB0C5F1EE4D55400D8DDCD /* IBOutletScanner.swift */,
+				07AB0C5D1EE4D50F00D8DDCD /* main.swift */,
+				07C52FAD1EE61DBB00A812B0 /* Options.swift */,
 			);
 			name = Source;
 			path = src;
@@ -142,6 +148,8 @@
 			files = (
 				07AB0C601EE4D55400D8DDCD /* IBOutletScanner.swift in Sources */,
 				07AB0C5E1EE4D50F00D8DDCD /* main.swift in Sources */,
+				07C52FAA1EE4DA9800A812B0 /* FileScanner.swift in Sources */,
+				07C52FAE1EE61DBB00A812B0 /* Options.swift in Sources */,
 				07AB0C5C1EE4D4FE00D8DDCD /* SWXMLHash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
