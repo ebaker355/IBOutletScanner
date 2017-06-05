@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07AB0C5C1EE4D4FE00D8DDCD /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB0C5B1EE4D4FE00D8DDCD /* SWXMLHash.swift */; };
+		07AB0C5E1EE4D50F00D8DDCD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB0C5D1EE4D50F00D8DDCD /* main.swift */; };
+		07AB0C601EE4D55400D8DDCD /* IBOutletScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB0C5F1EE4D55400D8DDCD /* IBOutletScanner.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		072C88C71EE4C74F0043C3E6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		072C88C91EE4C74F0043C3E6 /* IBOutletScanner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IBOutletScanner; sourceTree = BUILT_PRODUCTS_DIR; };
+		07AB0C581EE4D3D700D8DDCD /* IBOutletScanner-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IBOutletScanner-Info.plist"; sourceTree = "<group>"; };
+		07AB0C5B1EE4D4FE00D8DDCD /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = SWXMLHash/Source/SWXMLHash.swift; sourceTree = "<group>"; };
+		07AB0C5D1EE4D50F00D8DDCD /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		07AB0C5F1EE4D55400D8DDCD /* IBOutletScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBOutletScanner.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		072C88C61EE4C74F0043C3E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		072C88C01EE4C74F0043C3E6 = {
+			isa = PBXGroup;
+			children = (
+				07AB0C581EE4D3D700D8DDCD /* IBOutletScanner-Info.plist */,
+				07AB0C5A1EE4D4B500D8DDCD /* Libraries */,
+				072C88CA1EE4C74F0043C3E6 /* Products */,
+				07AB0C591EE4D4A600D8DDCD /* Source */,
+			);
+			sourceTree = "<group>";
+		};
+		072C88CA1EE4C74F0043C3E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				072C88C91EE4C74F0043C3E6 /* IBOutletScanner */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07AB0C591EE4D4A600D8DDCD /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				07AB0C5D1EE4D50F00D8DDCD /* main.swift */,
+				07AB0C5F1EE4D55400D8DDCD /* IBOutletScanner.swift */,
+			);
+			name = Source;
+			path = src;
+			sourceTree = "<group>";
+		};
+		07AB0C5A1EE4D4B500D8DDCD /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				07AB0C5B1EE4D4FE00D8DDCD /* SWXMLHash.swift */,
+			);
+			name = Libraries;
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		072C88C81EE4C74F0043C3E6 /* IBOutletScanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 072C88D01EE4C74F0043C3E6 /* Build configuration list for PBXNativeTarget "IBOutletScanner" */;
+			buildPhases = (
+				072C88C51EE4C74F0043C3E6 /* Sources */,
+				072C88C61EE4C74F0043C3E6 /* Frameworks */,
+				072C88C71EE4C74F0043C3E6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IBOutletScanner;
+			productName = IBOutletScanner;
+			productReference = 072C88C91EE4C74F0043C3E6 /* IBOutletScanner */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		072C88C11EE4C74F0043C3E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "DuneParkSoftware, LLC";
+				TargetAttributes = {
+					072C88C81EE4C74F0043C3E6 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 7CRPKLHC7G;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 072C88C41EE4C74F0043C3E6 /* Build configuration list for PBXProject "IBOutletScanner" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 072C88C01EE4C74F0043C3E6;
+			productRefGroup = 072C88CA1EE4C74F0043C3E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				072C88C81EE4C74F0043C3E6 /* IBOutletScanner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		072C88C51EE4C74F0043C3E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07AB0C601EE4D55400D8DDCD /* IBOutletScanner.swift in Sources */,
+				07AB0C5E1EE4D50F00D8DDCD /* main.swift in Sources */,
+				07AB0C5C1EE4D4FE00D8DDCD /* SWXMLHash.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		072C88CE1EE4C74F0043C3E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		072C88CF1EE4C74F0043C3E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		072C88D11EE4C74F0043C3E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/IBOutletScanner-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.duneparksoftware.IBOutletScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		072C88D21EE4C74F0043C3E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				INFOPLIST_FILE = "$(SRCROOT)/IBOutletScanner-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.duneparksoftware.IBOutletScanner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		072C88C41EE4C74F0043C3E6 /* Build configuration list for PBXProject "IBOutletScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072C88CE1EE4C74F0043C3E6 /* Debug */,
+				072C88CF1EE4C74F0043C3E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		072C88D01EE4C74F0043C3E6 /* Build configuration list for PBXNativeTarget "IBOutletScanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				072C88D11EE4C74F0043C3E6 /* Debug */,
+				072C88D21EE4C74F0043C3E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 072C88C11EE4C74F0043C3E6 /* Project object */;
+}
