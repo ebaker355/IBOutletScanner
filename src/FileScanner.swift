@@ -25,15 +25,31 @@
 import Foundation
 
 enum FileScannerError: Error {
-    case fileSystemError
+    case noPath
+    case fileSystemError(path: String)
+}
+
+extension FileScannerError: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .noPath:
+            return "No search path specified"
+        case .fileSystemError(let path):
+            return "Can't access path: " + String(describing: path)
+        }
+    }
 }
 
 public struct FileScanner {
     typealias FileScannerProcessor = (_ file: URL) throws -> Void
 
     func processFiles(ofTypes fileTypes: [String], inPath path: String, _ processor: FileScannerProcessor) throws {
+        guard path.count > 0 else {
+            throw FileScannerError.noPath
+        }
+
         guard let enumerator = FileManager.default.enumerator(atPath: path) else {
-            throw FileScannerError.fileSystemError
+            throw FileScannerError.fileSystemError(path: path)
         }
 
         let rootURL = URL(fileURLWithPath: path)

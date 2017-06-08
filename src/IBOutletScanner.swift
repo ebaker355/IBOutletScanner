@@ -32,13 +32,14 @@ public class IBOutletScanner {
     private lazy var views: [IBView] = { return [] }()
     private let outletElementTypes = ["outlet"]
     private let viewElementTypes = ["barButtonItem", "button", "label", "segmentedControl",
-                                    "tabBarItem", "textField", "textView", "view"]
+                                    "tabBarItem", "tableView", "textField", "textView", "view"]
 
     typealias IgnoreViewFilterName = String
     typealias IgnoreViewFilterValues = [String]
     typealias IgnoreViewFilters = [ IgnoreViewFilterName : IgnoreViewFilterValues]
 
-    private let ignoreViewFilters: IgnoreViewFilters = ["systemItem" : ["flexibleSpace"]]
+    private let ignoreViewFilters: IgnoreViewFilters = ["systemItem" : ["flexibleSpace",
+                                                                        "fixedSpace"]]
 
     public static func run() -> Int32 {
         let fileScanner = FileScanner()
@@ -49,12 +50,14 @@ public class IBOutletScanner {
                 let scanner = IBOutletScanner()
                 try scanner.scan(ibFile: file)
                 for view in scanner.orphanedViews {
-                    print("warning: orphaned view: " + String(describing: view) + " in file: " + scanner.path(toFile: file, relativeToRootPath: rootPath))
+                    print("warning: orphaned view: " + String(describing: view) +
+                          " in file: " + scanner.path(toFile: file, relativeToRootPath: rootPath))
                 }
             }
         }
         catch {
             print("error: " + String(describing: error))
+            return 1
         }
 
         return 0
@@ -99,7 +102,8 @@ public class IBOutletScanner {
                 if let identifier = element.allAttributes["id"] {
                     let customClass = element.allAttributes["customClass"]?.text ?? ""
 
-                    if type != "view" || (type == "view" && IBOutletScanner.options.customViewClassNames.contains(customClass)) {
+                    if type != "view" ||
+                        (type == "view" && IBOutletScanner.options.customViewClassNames.contains(customClass)) {
                         views.append(IBView(identifier: identifier.text, type: type, customClass: customClass))
                     }
                 }
