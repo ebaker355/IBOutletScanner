@@ -24,18 +24,33 @@
 
 import Foundation
 
-public struct IBOutletScanner {
+public class IBOutletScanner {
 
-    let options = Options.createFromCommandLineArguments()
-    let fileScanner = FileScanner()
+    static let options = Options.createFromCommandLineArguments()
+
+    private lazy var connections: [IBOutletConnection] = { return [] }()
+    private lazy var views: [IBView] = { return [] }()
+    private let outletElementTypes = ["outlet"]
+    private let viewElementTypes = ["barButtonItem", "button", "label", "segmentedControl",
+                                    "tabBarItem", "textField", "textView", "view"]
+
+    typealias IgnoreViewFilterName = String
+    typealias IgnoreViewFilterValues = [String]
+    typealias IgnoreViewFilters = [ IgnoreViewFilterName : IgnoreViewFilterValues]
+
+    private let ignoreViewFilters: IgnoreViewFilters = ["systemItem" : ["flexibleSpace"]]
 
     public static func run() -> Int32 {
-        let scanner = IBOutletScanner()
+        let fileScanner = FileScanner()
+        let rootPath = options.rootPath
 
         do {
-            try scanner.fileScanner.processFiles(ofTypes: ["storyboard", "xib"],
-                                                 inPath: scanner.options.rootPath) { file in
-                print("Processing file: " + String(describing: file))
+            try fileScanner.processFiles(ofTypes: ["storyboard", "xib"], inPath: rootPath) { file in
+                let scanner = IBOutletScanner()
+                try scanner.scan(ibFile: file)
+                for view in scanner.orphanedViews {
+                    print("warning: orphaned view: " + String(describing: view) + " in file: " + scanner.path(toFile: file, relativeToRootPath: rootPath))
+                }
             }
         }
         catch {
@@ -43,5 +58,69 @@ public struct IBOutletScanner {
         }
 
         return 0
+    }
+
+    public func path(toFile file: URL, relativeToRootPath rootPath: String) -> String {
+        var path = file.path.replacingOccurrences(of: rootPath, with: "")
+        while path.hasPrefix("/") {
+            path.remove(at: path.startIndex)
+        }
+        return path
+    }
+
+    public var orphanedViews: [IBView] {
+        return views.filter { view in
+            return connections.filter({ connection in
+                connection.connectsToObject(withIdentifier: view.identifier)
+            }).count < 1
+        }
+    }
+
+    private func scan(ibFile: URL) throws {
+        let xml = try String(contentsOf: ibFile)
+        let xmlIndexer = SWXMLHash.lazy(xml)
+        parse(xml: xmlIndexer)
+    }
+
+    private func parse(xml: XMLIndexer) {
+        xml.children.forEach { child in
+            guard let element = child.element else { return }
+
+            // Collect outlets
+            if outletElementTypes.contains(element.name) {
+                if let destination = element.allAttributes["destination"] {
+                    connections.append(IBOutletConnection(destination: destination.text))
+                }
+            }
+
+            // Collect view objects
+            let type = element.name
+            if viewElementTypes.contains(type) && !shouldIgnore(viewElement: element) {
+                if let identifier = element.allAttributes["id"] {
+                    let customClass = element.allAttributes["customClass"]?.text ?? ""
+
+                    if type != "view" || (type == "view" && IBOutletScanner.options.customViewClassNames.contains(customClass)) {
+                        views.append(IBView(identifier: identifier.text, type: type, customClass: customClass))
+                    }
+                }
+            }
+
+            parse(xml: child)
+        }
+    }
+
+    private func shouldIgnore(viewElement element: XMLElement) -> Bool {
+        // TODO: How can we "functionalize" these loops?
+        for filter in ignoreViewFilters {
+            let name = filter.key
+            if let attribute = element.allAttributes[name]?.text {
+                for value in filter.value {
+                    if attribute == value {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
     }
 }

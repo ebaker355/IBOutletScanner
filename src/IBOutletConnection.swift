@@ -24,25 +24,18 @@
 
 import Foundation
 
-enum FileScannerError: Error {
-    case fileSystemError
+public struct IBOutletConnection {
+    let destination: String
+
+    public func connectsToObject(withIdentifier identifier: String) -> Bool {
+        return destination == identifier
+    }
 }
 
-public struct FileScanner {
-    typealias FileScannerProcessor = (_ file: URL) throws -> Void
-
-    func processFiles(ofTypes fileTypes: [String], inPath path: String, _ processor: FileScannerProcessor) throws {
-        guard let enumerator = FileManager.default.enumerator(atPath: path) else {
-            throw FileScannerError.fileSystemError
-        }
-
-        let rootURL = URL(fileURLWithPath: path)
-
-        while let dir = enumerator.nextObject() as? String {
-            let fileURL = rootURL.appendingPathComponent(dir)
-            if fileTypes.contains(fileURL.pathExtension) {
-                try processor(fileURL)
-            }
+extension IBOutletConnection: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        get {
+            return "IBOutletConnection { destination: \(destination) }"
         }
     }
 }

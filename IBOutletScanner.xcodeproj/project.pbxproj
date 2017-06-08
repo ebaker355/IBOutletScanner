@@ -12,6 +12,8 @@
 		07AB0C601EE4D55400D8DDCD /* IBOutletScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB0C5F1EE4D55400D8DDCD /* IBOutletScanner.swift */; };
 		07C52FAA1EE4DA9800A812B0 /* FileScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C52FA91EE4DA9800A812B0 /* FileScanner.swift */; };
 		07C52FAE1EE61DBB00A812B0 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C52FAD1EE61DBB00A812B0 /* Options.swift */; };
+		07C52FB01EE6C56300A812B0 /* IBOutletConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C52FAF1EE6C56300A812B0 /* IBOutletConnection.swift */; };
+		07C52FB21EE797DF00A812B0 /* IBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C52FB11EE797DF00A812B0 /* IBView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,8 @@
 		07AB0C5F1EE4D55400D8DDCD /* IBOutletScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBOutletScanner.swift; sourceTree = "<group>"; };
 		07C52FA91EE4DA9800A812B0 /* FileScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileScanner.swift; sourceTree = "<group>"; };
 		07C52FAD1EE61DBB00A812B0 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		07C52FAF1EE6C56300A812B0 /* IBOutletConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBOutletConnection.swift; sourceTree = "<group>"; };
+		07C52FB11EE797DF00A812B0 /* IBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				07C52FA91EE4DA9800A812B0 /* FileScanner.swift */,
+				07C52FAF1EE6C56300A812B0 /* IBOutletConnection.swift */,
 				07AB0C5F1EE4D55400D8DDCD /* IBOutletScanner.swift */,
+				07C52FB11EE797DF00A812B0 /* IBView.swift */,
 				07AB0C5D1EE4D50F00D8DDCD /* main.swift */,
 				07C52FAD1EE61DBB00A812B0 /* Options.swift */,
 			);
@@ -148,9 +154,11 @@
 			files = (
 				07AB0C601EE4D55400D8DDCD /* IBOutletScanner.swift in Sources */,
 				07AB0C5E1EE4D50F00D8DDCD /* main.swift in Sources */,
+				07C52FB21EE797DF00A812B0 /* IBView.swift in Sources */,
 				07C52FAA1EE4DA9800A812B0 /* FileScanner.swift in Sources */,
 				07C52FAE1EE61DBB00A812B0 /* Options.swift in Sources */,
 				07AB0C5C1EE4D4FE00D8DDCD /* SWXMLHash.swift in Sources */,
+				07C52FB01EE6C56300A812B0 /* IBOutletConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
