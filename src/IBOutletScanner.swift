@@ -49,8 +49,8 @@ public class IBOutletScanner {
             try fileScanner.processFiles(ofTypes: ["storyboard", "xib"], inPath: rootPath) { file in
                 let scanner = IBOutletScanner()
                 try scanner.scan(ibFile: file)
-                for view in scanner.orphanedViews {
-                    print("warning: orphaned view: " + String(describing: view) +
+                for view in scanner.disconnectedViews {
+                    print("warning: disconnected view: " + String(describing: view) +
                           " in file: " + scanner.path(toFile: file, relativeToRootPath: rootPath))
                 }
             }
@@ -71,7 +71,7 @@ public class IBOutletScanner {
         return path
     }
 
-    public var orphanedViews: [IBView] {
+    public var disconnectedViews: [IBView] {
         return views.filter { view in
             return connections.filter({ connection in
                 connection.connectsToObject(withIdentifier: view.identifier)
